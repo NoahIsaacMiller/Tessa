@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.noahmiller.tessa.user.entity"/>
+    </typeAliases>
+
+    <typeHandlers>
+        <typeHandler handler="com.noahmiller.tessa.user.handler.UserStatusTypeHandler"
+                     javaType="com.noahmiller.tessa.user.entity.UserStatus" jdbcType="INTEGER"/>
+        <typeHandler handler="com.noahmiller.tessa.user.handler.GenderHandler"
+                     javaType="com.noahmiller.tessa.user.entity.Gender" jdbcType="VARCHAR"/>
+    </typeHandlers>
+
+
+</configuration>

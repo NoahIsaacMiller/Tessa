@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.noahmiller.tessa.user.mapper.UserMapper">
+
+    <!-- 基础结果映射 -->
+    <resultMap id="UserResultMap" type="com.noahmiller.tessa.user.entity.User">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="email" column="email" />
+        <result property="phoneNumber" column="phone_number" />
+        <result property="passwordHash" column="password_hash" />
+        <result property="salt" column="salt" />
+        <result property="birthday" column="birthday" />
+        <result property="gender" column="gender" typeHandler="com.noahmiller.tessa.user.handler.GenderHandler"/>
+        <result property="status" column="status" />
+        <result property="emailVerified" column="email_verified" />
+        <result property="phoneVerified" column="phone_verified" />
+        <result property="lastLogin" column="last_login" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+        <association property="province" javaType="com.noahmiller.tessa.user.entity.Province">
+            <id property="id" column="province_id" />
+            <result property="name" column="province_name" />
+        </association>
+        <association property="city" javaType="com.noahmiller.tessa.user.entity.City">
+            <id property="id" column="city_id" />
+            <result property="name" column="city_name" />
+            <result property="provinceId" column="province_id" />
+        </association>
+    </resultMap>
+
+    <!-- 插入用户 -->
+    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity.User">
+        INSERT INTO users (
+        username, email, password_hash, salt,
+        status, email_verified
+        ) VALUES (
+        #{username}, #{email}, #{passwordHash}, #{salt},
+        #{status.value}, #{emailVerified}
+        )
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <!-- 查询单个用户 -->
+    <select id="selectUserById" parameterType="java.lang.Long" resultMap="UserResultMap">
+        SELECT
+        u.*,
+        p.name as province_name,
+        c.name as city_name
+        FROM users u
+        LEFT JOIN provinces p ON u.province_id = p.id
+        LEFT JOIN cities c ON u.city_id = c.id
+        WHERE u.id = #{id}
+    </select>
+
+    <select id="selectUserByUsername" parameterType="java.lang.String" resultMap="UserResultMap">
+        SELECT
+        u.*,
+        p.name as province_name,
+        c.name as city_name
+        FROM users u
+        LEFT JOIN provinces p ON u.province_id = p.id
+        LEFT JOIN cities c ON u.city_id = c.id
+        WHERE u.username = #{username}
+    </select>
+
+    <select id="selectUserByEmail" parameterType="java.lang.String" resultMap="UserResultMap">
+        SELECT
+        u.*,
+        p.name as province_name,
+        c.name as city_name
+        FROM users u
+        LEFT JOIN provinces p ON u.province_id = p.id
+        LEFT JOIN cities c ON u.city_id = c.id
+        WHERE u.email = #{email}
+    </select>
+
+    <select id="selectUserByPhoneNumber" parameterType="java.lang.String" resultMap="UserResultMap">
+        SELECT
+        u.*,
+        p.name as province_name,
+        c.name as city_name
+        FROM users u
+        LEFT JOIN provinces p ON u.province_id = p.id
+        LEFT JOIN cities c ON u.city_id = c.id
+        WHERE u.phone_number = #{phoneNumber}
+    </select>
+
+    <!-- 查询所有用户 -->
+    <select id="selectAllUsers" resultMap="UserResultMap">
+        SELECT
+        u.*,
+        p.name as province_name,
+        c.name as city_name
+        FROM users u
+        LEFT JOIN provinces p ON u.province_id = p.id
+        LEFT JOIN cities c ON u.city_id = c.id
+    </select>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="com.noahmiller.tessa.user.entity.User">
+        UPDATE users
+        <set>
+            <if test="username != null">username = #{username},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="phoneNumber != null">phone_number = #{phoneNumber},</if>
+            <if test="passwordHash != null">password_hash = #{passwordHash},</if>
+            <if test="salt != null">salt = #{salt},</if>
+            <if test="birthday != null">birthday = #{birthday},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="province != null">province_id = #{province.id},</if>
+            <if test="city != null">city_id = #{city.id},</if>
+            <if test="status != null">status = #{status.value},</if>
+            <if test="emailVerified != null">email_verified = #{emailVerified},</if>
+            <if test="phoneVerified != null">phone_verified = #{phoneVerified},</if>
+            <if test="lastLogin != null">last_login = #{lastLogin},</if>
+            update_time = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUserById" parameterType="java.lang.Long">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+
+    <!-- 存在性检查 -->
+    <select id="existsById" parameterType="java.lang.Long" resultType="java.lang.Boolean">
+        SELECT EXISTS(SELECT 1 FROM users WHERE id = #{id})
+    </select>
+
+    <select id="existsByEmail" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        SELECT EXISTS(SELECT 1 FROM users WHERE email = #{email})
+    </select>
+
+    <select id="existsByUsername" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        SELECT EXISTS(SELECT 1 FROM users WHERE username = #{username})
+    </select>
+
+    <select id="existsByPhoneNumber" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        SELECT EXISTS(SELECT 1 FROM users WHERE phone_number = #{phoneNumber})
+    </select>
+
+    <!-- 按状态查询用户 -->
+    <select id="selectUsersByStatus" parameterType="com.noahmiller.tessa.user.entity.UserStatus" resultMap="UserResultMap">
+        SELECT
+        u.*,
+        p.name as province_name,
+        c.name as city_name
+        FROM users u
+        LEFT JOIN provinces p ON u.province_id = p.id
+        LEFT JOIN cities c ON u.city_id = c.id
+        WHERE u.status = #{value}
+    </select>
+
+</mapper>
