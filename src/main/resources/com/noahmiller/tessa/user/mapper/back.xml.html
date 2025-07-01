@@ -4,7 +4,7 @@
 <mapper namespace="com.noahmiller.tessa.user.mapper.UserMapper">
 
     <!-- 基础结果映射 -->
-    <resultMap id="UserResultMap" type="com.noahmiller.tessa.user.entity.User">
+    <resultMap id="UserResultMap" type="com.noahmiller.tessa.user.entity_old.User">
         <id property="id" column="id" />
         <result property="username" column="username" />
         <result property="email" column="email" />
@@ -19,11 +19,11 @@
         <result property="lastLogin" column="last_login" />
         <result property="createTime" column="create_time" />
         <result property="updateTime" column="update_time" />
-        <association property="province" javaType="com.noahmiller.tessa.user.entity.Province">
+        <association property="province" javaType="com.noahmiller.tessa.user.entity_old.Province">
             <id property="id" column="province_id" />
             <result property="name" column="province_name" />
         </association>
-        <association property="city" javaType="com.noahmiller.tessa.user.entity.City">
+        <association property="city" javaType="com.noahmiller.tessa.user.entity_old.City">
             <id property="id" column="city_id" />
             <result property="name" column="city_name" />
             <result property="provinceId" column="province_id" />
@@ -31,7 +31,7 @@
     </resultMap>
 
     <!-- 插入用户 -->
-    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity.User">
+    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity_old.User">
         INSERT INTO users (
         username, email, password_hash, salt,
         status, email_verified
@@ -101,7 +101,7 @@
     </select>
 
     <!-- 更新用户 -->
-    <update id="updateUser" parameterType="com.noahmiller.tessa.user.entity.User">
+    <update id="updateUser" parameterType="com.noahmiller.tessa.user.entity_old.User">
         UPDATE users
         <set>
             <if test="username != null">username = #{username},</if>
@@ -145,7 +145,7 @@
     </select>
 
     <!-- 按状态查询用户 -->
-    <select id="selectUsersByStatus" parameterType="com.noahmiller.tessa.user.entity.UserStatus" resultMap="UserResultMap">
+    <select id="selectUsersByStatus" parameterType="com.noahmiller.tessa.user.entity_old.UserStatus" resultMap="UserResultMap">
         SELECT
         u.*,
         p.name as province_name,

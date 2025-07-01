@@ -1,9 +1,9 @@
-package com.noahmiller.tessa.auth.controller;
+package com.noahmiller.tessa.auth.controller_old;
 import com.noahmiller.tessa.auth.enums.VerificationChannel;
 import com.noahmiller.tessa.auth.enums.VerificationType;
 import com.noahmiller.tessa.auth.service.VerificationService;
-import com.noahmiller.tessa.common.api.ApiResponse;
-import com.noahmiller.tessa.user.service.UserService;
+import com.noahmiller.tessa.core.api.ApiResponse;
+import com.noahmiller.tessa.core.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.config;
+package com.noahmiller.tessa.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

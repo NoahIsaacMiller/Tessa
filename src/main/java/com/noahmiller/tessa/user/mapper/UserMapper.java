@@ -1,7 +1,7 @@
 package com.noahmiller.tessa.user.mapper;
 
-import com.noahmiller.tessa.user.entity.User;
-import com.noahmiller.tessa.user.entity.UserStatus;
+import com.noahmiller.tessa.user.entity_old.User;
+import com.noahmiller.tessa.user.entity_old.UserStatus;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

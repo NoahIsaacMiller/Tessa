@@ -1,8 +1,8 @@
 package com.noahmiller.tessa;
 
-import com.noahmiller.tessa.user.entity.User;
+import com.noahmiller.tessa.user.entity_old.User;
 import com.noahmiller.tessa.user.mapper.UserMapper;
-import com.noahmiller.tessa.user.service.UserService;
+import com.noahmiller.tessa.core.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;

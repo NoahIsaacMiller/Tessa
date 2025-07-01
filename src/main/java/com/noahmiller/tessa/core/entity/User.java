@@ -1,5 +1,6 @@
-package com.noahmiller.tessa.user.entity; // 建议改为 com.noahmiller.tessa.model.entity
+package com.noahmiller.tessa.core.entity; // 建议改为 com.noahmiller.tessa.model.entity
 
+import com.noahmiller.tessa.user.entity.City;
 import com.noahmiller.tessa.user.entity_old.Gender;
 import com.noahmiller.tessa.user.entity_old.UserStatus;
 import jakarta.persistence.*;

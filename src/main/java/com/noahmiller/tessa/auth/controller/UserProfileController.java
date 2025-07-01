@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.auth.controller_new;
+package com.noahmiller.tessa.auth.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

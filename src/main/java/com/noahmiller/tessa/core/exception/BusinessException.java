@@ -1,7 +1,7 @@
-package com.noahmiller.tessa.common.exception;
+package com.noahmiller.tessa.core.exception;
 
 
-import com.noahmiller.tessa.common.enums.ResultCode;
+import com.noahmiller.tessa.core.enums.ResultCode;
 
 /**
  * 业务异常基类。

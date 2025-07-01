@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.enums;
+package com.noahmiller.tessa.core.enums;
 
 public enum RolesType {
     USER("普通用户"),

@@ -1,6 +1,6 @@
-package com.noahmiller.tessa.common.service;
+package com.noahmiller.tessa.core.service;
 
-import com.noahmiller.tessa.common.service.impl.PasswordValidatorServiceImpl;
+import com.noahmiller.tessa.core.service.impl.PasswordValidatorServiceImpl;
 
 /**
  * 密码服务接口，提供密码哈希、验证及格式校验功能。

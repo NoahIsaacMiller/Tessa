@@ -1,11 +1,11 @@
-package com.noahmiller.tessa.auth.controller;
+package com.noahmiller.tessa.auth.controller_old;
 
 import com.noahmiller.tessa.auth.dto.UserCreateRequest;
 import com.noahmiller.tessa.auth.enums.VerificationChannel;
-import com.noahmiller.tessa.common.api.ApiResponse;
-import com.noahmiller.tessa.common.utils.PasswordTool;
-import com.noahmiller.tessa.common.validator.PasswordValidator;
-import com.noahmiller.tessa.user.service.UserService;
+import com.noahmiller.tessa.core.api.ApiResponse;
+import com.noahmiller.tessa.core.service.impl.PasswordServiceImpl;
+import com.noahmiller.tessa.core.service.impl.PasswordValidatorServiceImpl;
+import com.noahmiller.tessa.core.service.UserService;
 import com.noahmiller.tessa.auth.dto.VerificationSendRequest;
 import com.noahmiller.tessa.auth.dto.VerificationVerifyRequest;
 import com.noahmiller.tessa.auth.enums.VerificationType;
@@ -15,7 +15,6 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +36,7 @@ public class RegistrationController {
     @Resource
     private final UserService userService;
     @Autowired
-    private PasswordTool passwordTool;
+    private PasswordServiceImpl passwordServiceImpl;
 
     public RegistrationController(UserService userService) {
         this.userService = userService;
@@ -54,7 +53,7 @@ public class RegistrationController {
         }
 
         try {
-            PasswordValidator.PasswordValidationResult passwordValidationResult = passwordTool.validatePassword(userCreateRequest.getPassword());
+            PasswordValidatorServiceImpl.PasswordValidationResult passwordValidationResult = passwordServiceImpl.validatePassword(userCreateRequest.getPassword());
             if (!passwordValidationResult.isValid()) {
                 return ApiResponse.failure(passwordValidationResult.getErrorMessage());
             }

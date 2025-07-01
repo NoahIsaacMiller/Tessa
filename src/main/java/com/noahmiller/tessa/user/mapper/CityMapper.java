@@ -1,6 +1,6 @@
 package com.noahmiller.tessa.user.mapper;
 
-import com.noahmiller.tessa.user.entity.City;
+import com.noahmiller.tessa.user.entity_old.City;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

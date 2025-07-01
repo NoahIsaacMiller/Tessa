@@ -1,7 +1,7 @@
 // src/main/java/com/noahmiller/tessa/common/service/impl/PasswordServiceImpl.java
-package com.noahmiller.tessa.common.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
-import com.noahmiller.tessa.common.service.PasswordService; // 导入接口
+import com.noahmiller.tessa.core.service.PasswordService; // 导入接口
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder; // 引入BCryptPasswordEncoder
 import org.springframework.stereotype.Service; // 使用 @Service 注解更明确服务层角色
 

@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;

@@ -5,7 +5,7 @@
 <mapper namespace="com.noahmiller.tessa.user.mapper.UserMapper">
 
     <!-- ====================== 结果映射 ====================== -->
-    <resultMap id="UserResultMap" type="com.noahmiller.tessa.user.entity.User">
+    <resultMap id="UserResultMap" type="com.noahmiller.tessa.user.entity_old.User">
         <!-- 主键映射 -->
         <id property="id" column="id" jdbcType="BIGINT" />
 
@@ -28,7 +28,7 @@
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
 
         <!-- 关联城市对象 -->
-        <association property="city" javaType="com.noahmiller.tessa.user.entity.City">
+        <association property="city" javaType="com.noahmiller.tessa.user.entity_old.City">
             <id property="id" column="city_id" jdbcType="BIGINT" />
             <result property="name" column="city_name" jdbcType="VARCHAR" />
             <result property="provinceName" column="province_name" jdbcType="VARCHAR" />
@@ -36,7 +36,7 @@
     </resultMap>
 
     <!-- ====================== 插入操作 ====================== -->
-    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity.User"
+    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity_old.User"
             useGeneratedKeys="true" keyProperty="id">
         INSERT INTO users (
             username, email, password_hash, salt,
@@ -122,7 +122,7 @@
     </select>
 
     <!-- ====================== 更新操作 ====================== -->
-    <update id="updateUser" parameterType="com.noahmiller.tessa.user.entity.User">
+    <update id="updateUser" parameterType="com.noahmiller.tessa.user.entity_old.User">
         UPDATE users
         <set>
             <if test="username != null">username = #{username, jdbcType=VARCHAR},</if>
@@ -170,7 +170,7 @@
     </select>
 
     <!-- ====================== 条件查询 ====================== -->
-    <select id="selectUsersByStatus" parameterType="com.noahmiller.tessa.user.entity.UserStatus" resultMap="UserResultMap">
+    <select id="selectUsersByStatus" parameterType="com.noahmiller.tessa.user.entity_old.UserStatus" resultMap="UserResultMap">
         SELECT
             u.*,
             c.id AS city_id,

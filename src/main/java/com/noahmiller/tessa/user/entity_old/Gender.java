@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.user.entity;
+package com.noahmiller.tessa.user.entity_old;
 
 
 import lombok.Getter;

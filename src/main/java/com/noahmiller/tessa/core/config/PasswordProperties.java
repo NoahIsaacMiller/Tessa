@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.config;
+package com.noahmiller.tessa.core.config;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

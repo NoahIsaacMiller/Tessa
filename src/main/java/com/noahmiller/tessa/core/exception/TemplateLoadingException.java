@@ -1,8 +1,8 @@
 // src/main/java/com.noahmiller/tessa/exception/TemplateLoadingException.java
-package com.noahmiller.tessa.common.exception;
+package com.noahmiller.tessa.core.exception;
 
 
-import com.noahmiller.tessa.common.enums.ResultCode;
+import com.noahmiller.tessa.core.enums.ResultCode;
 
 /**
  * 模板加载异常，用于表示在加载模板文件时发生的错误。

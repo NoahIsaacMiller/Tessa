@@ -1,6 +1,6 @@
-package com.noahmiller.tessa.common.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
-import com.noahmiller.tessa.common.config.PasswordProperties;
+import com.noahmiller.tessa.core.config.PasswordProperties;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 

@@ -1,19 +1,17 @@
-// src/main/java/com/noahmiller/tessa/user/service/impl/UserServiceImpl.java
-package com.noahmiller.tessa.user.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
-import com.noahmiller.tessa.core.service.impl.PasswordServiceImpl; // 假设 PasswordTool 用于密码哈希和盐生成
 import com.noahmiller.tessa.auth.dto.UserCreateRequest;
-import com.noahmiller.tessa.auth.dto.UserUpdateRequest; // 引入 UserUpdateRequest
+import com.noahmiller.tessa.auth.dto.UserUpdateRequest;
 import com.noahmiller.tessa.user.entity_old.UserStatus;
 import com.noahmiller.tessa.user.mapper.UserMapper;
 import com.noahmiller.tessa.user.entity_old.User;
-import com.noahmiller.tessa.user.entity_old.City; // 引入 City
-import com.noahmiller.tessa.user.entity_old.Gender; // 引入 Gender
-import com.noahmiller.tessa.user.service.UserService;
+import com.noahmiller.tessa.user.entity_old.City;
+import com.noahmiller.tessa.user.entity_old.Gender;
+import com.noahmiller.tessa.core.service.UserService;
 
 // 引入自定义异常
 import com.noahmiller.tessa.user.exception.InvalidUserArgumentException;
-import com.noahmiller.tessa.user.exception.UserNotFoundException;
+import com.noahmiller.tessa.core.exception.UserNotFoundException;
 import com.noahmiller.tessa.user.exception.UserAlreadyExistsException;
 
 import org.springframework.beans.BeanUtils;
@@ -23,8 +21,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.Optional; // 引入 Optional
+import java.util.Optional;
 import java.util.Random;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -40,12 +39,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<com.noahmiller.tessa.core.entity.User> getAllUsers() {
+        return List.of();
+    }
+
+    @Override
     public Optional<User> getUserById(Long id) {
         if (id == null || id < 1) {
             logger.warn("尝试通过非法ID获取用户: {}", id);
             throw new InvalidUserArgumentException("用户ID必须是正整数。");
         }
         return Optional.ofNullable(userMapper.selectUserById(id));
+    }
+
+    @Override
+    public Optional<com.noahmiller.tessa.core.entity.User> getUserByUsername(String username) {
+        return Optional.empty();
     }
 
     @Override
@@ -58,13 +67,73 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Optional<com.noahmiller.tessa.core.entity.User> getUserByPhone(String phone) {
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean isUsernameExist(String username) {
+        return false;
+    }
+
+    @Override
+    public boolean isEmailExist(String email) {
+        return false;
+    }
+
+    @Override
+    public boolean isPhoneExist(String phone) {
+        return false;
+    }
+
+    @Override
+    public boolean isUserActive(Long userId) {
+        return false;
+    }
+
+    @Override
+    public boolean isEmailVerified(Long userId) {
+        return false;
+    }
+
+    @Override
+    public boolean isPhoneVerified(Long userId) {
+        return false;
+    }
+
+    @Override
+    public boolean updateUserActiveStatus(Long userId, boolean active) {
+        return false;
+    }
+
+    @Override
+    public boolean updatePassword(Long userId, String newEncodedPassword) {
+        return false;
+    }
+
+    @Override
+    public boolean updateUserRoles(Long userId, Set<String> newRoles) {
+        return false;
+    }
+
+    @Override
+    public boolean updateEmailVerifiedStatus(Long userId, boolean verified) {
+        return false;
+    }
+
+    @Override
+    public boolean updatePhoneVerifiedStatus(Long userId, boolean verified) {
+        return false;
+    }
+
+    @Override
     public List<User> getUsers() {
         List<User> users = userMapper.selectAllUsers();
         return users != null ? users : List.of(); // 确保返回非 null 的列表
     }
 
+    @Transactional
     @Override
-    @Transactional // 保证操作的原子性
     public void insertUser(UserCreateRequest userCreateRequest) {
         if (userCreateRequest == null) {
             logger.warn("尝试创建用户时接收到空的 UserCreateRequest。");
@@ -99,8 +168,8 @@ public class UserServiceImpl implements UserService {
         logger.info("新用户 {} (邮箱: {}) 已创建成功。", user.getUsername(), user.getEmail());
     }
 
-    @Override
     @Transactional
+    @Override
     public void activateUser(String email) {
         if (email == null || email.isBlank()) {
             logger.warn("尝试激活用户时接收到空或空白邮箱。");
@@ -162,8 +231,8 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    @Override
     @Transactional
+    @Override
     public void updateUserByEmail(String email, UserUpdateRequest updateRequest) {
         if (email == null || email.isBlank()) {
             logger.warn("尝试通过空或空白邮箱更新用户。");
@@ -187,8 +256,8 @@ public class UserServiceImpl implements UserService {
         logger.info("用户邮箱为 {} 的信息已被成功更新。", email);
     }
 
-    @Override
     @Transactional
+    @Override
     public void updateUserById(Long userId, UserUpdateRequest updateRequest) {
         if (userId == null || userId < 1) {
             logger.warn("尝试通过非法ID更新用户: {}", userId);
@@ -213,8 +282,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(Long userId) {
-
+    public boolean deleteUser(Long userId) {
+        try {
+            userMapper.deleteUserById(userId);
+        } catch (Exception e) {
+            return false;
+        } return true;
     }
 
     /**

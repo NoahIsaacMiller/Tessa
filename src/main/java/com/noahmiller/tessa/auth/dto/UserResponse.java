@@ -1,6 +1,6 @@
 package com.noahmiller.tessa.auth.dto;
 
-import com.noahmiller.tessa.user.entity.User;
+import com.noahmiller.tessa.user.entity_old.User;
 import lombok.Data;
 
 import java.time.LocalDate;

@@ -1,34 +1,50 @@
+// src/main/java/com/noahmiller/tessa/auth/dto/UserUpdateRequest.java
 package com.noahmiller.tessa.auth.dto;
 
-import jakarta.validation.constraints.*;
-import lombok.Data;
+import jakarta.validation.constraints.*; // 导入所有必要的校验注解
+import lombok.Data; // 引入 Lombok 的 @Data 注解，自动生成 getter/setter/toString/equals/hashCode
 
-@Data
+/**
+ * 用户信息更新请求数据传输对象 (DTO)。
+ * 用于接收前端发送的用户更新请求数据。
+ *
+ * 核心原则：
+ * - DTO 仅作为数据载体，不包含复杂的业务逻辑。
+ * - 复杂的校验规则（如用户名长度/模式、邮箱格式、密码强度等）将全部推迟到 Service 层处理。
+ * - 仅保留必要的非空或非空白校验，以确保基本的数据完整性。
+ */
+@Data // Lombok 注解，自动生成所有 getter/setter/toString/equals/hashCode 方法
 public class UserUpdateRequest {
 
-    private Integer id; // 通常需要携带用户 ID 进行更新
+    // 通常用于根据 ID 查找用户进行更新。
+    // 如果是通过其他唯一标识（如邮箱）更新，此字段可移除或仅用于特定场景。
+    private Long id; // 使用 Long 类型与数据库 ID 匹配
 
-    @Size(min = 3, max = 50, message = "用户名长度必须在 3 到 50 个字符之间")
-    @Pattern(regexp = "^[a-zA-Z0-9._-]+$", message = "用户名只能包含字母、数字、下划线、点和连字符")
+    // 用户名：不再包含复杂的长度或模式校验，这些将在 Service 层进行。
     private String username;
 
-    @Size(min = 12, message = "密码长度至少为 12 个字符")
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{12,}$",
-            message = "密码必须包含至少一个数字、一个小写字母、一个大写字母、一个特殊字符，且不包含空白字符")
-    private String password; // 可选，如果需要更新密码
+    // 密码：可选，如果需要更新密码。
+    // 其强度和格式校验将在 Service 层进行。
+    private String password;
 
-    @Email(message = "邮箱格式不正确")
-    @Size(max = 100, message = "邮箱长度不能超过 100 个字符")
-    @NotNull
-    @NotBlank
-    private String email;
+    // 邮箱：仅保留非空和非空白约束，具体的邮箱格式校验将在 Service 层进行。
+    // @Email 校验注解也将移至 Service 层
+    @NotNull(message = "邮箱不能为空") // 确保字段不为 null
+    @NotBlank(message = "邮箱不能为空白") // 确保字段不为空字符串或只包含空白字符
+    private String email; // 邮箱仍然是重要的更新标识
 
-    @Pattern(regexp = "^1\\d{10}$", message = "手机号格式不正确")
+    // 手机号：模式校验移至 Service 层。
     private String phoneNumber;
 
-    private String birthday;
+    // 生日：日期格式校验移至 Service 层。
+    private String birthday; // 假设仍然是 String，Service 层转换为 LocalDate
+
+    // 性别：枚举值校验移至 Service 层。
     private String gender;
-    private String country;
+
+    // 省份/州：无特殊校验。
     private String stateProvince;
+
+    // 城市：无特殊校验。
     private String city;
 }

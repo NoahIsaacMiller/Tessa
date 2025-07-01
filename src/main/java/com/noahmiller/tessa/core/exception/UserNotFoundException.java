@@ -1,5 +1,5 @@
 // src/main/java/com/noahmiller/tessa/user/exception/UserNotFoundException.java
-package com.noahmiller.tessa.user.exception;
+package com.noahmiller.tessa.core.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

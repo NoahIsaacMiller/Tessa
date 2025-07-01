@@ -1,10 +1,10 @@
-package com.noahmiller.tessa.auth.controller;
+package com.noahmiller.tessa.auth.controller_old;
 
 import com.noahmiller.tessa.auth.dto.UserLoginRequest;
 import com.noahmiller.tessa.auth.dto.UserLoginResponse;
-import com.noahmiller.tessa.common.api.ApiResponse;
-import com.noahmiller.tessa.common.utils.JwtUtils;
-import com.noahmiller.tessa.user.entity.User;
+import com.noahmiller.tessa.core.api.ApiResponse;
+import com.noahmiller.tessa.core.service.JwtService;
+import com.noahmiller.tessa.user.entity_old.User;
 import com.noahmiller.tessa.user.enums.UserResponseMessage;
 import com.noahmiller.tessa.user.mapper.UserMapper;
 import com.noahmiller.tessa.auth.service.UserLoginService;
@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController     {
     private final UserMapper userMapper;
     private final UserLoginService userLoginService;
-    private final JwtUtils jwtUtils;
+    private final JwtService jwtService;
 
-    public LoginController(UserMapper userMapper, UserLoginService userLoginService, JwtUtils jwtUtils) {
+    public LoginController(UserMapper userMapper, UserLoginService userLoginService, JwtService jwtService) {
         this.userMapper = userMapper;
-        this.jwtUtils = jwtUtils;
+        this.jwtService = jwtService;
         this.userLoginService = userLoginService;
     }
 
@@ -47,8 +47,8 @@ public class LoginController     {
         }
 
         UserLoginResponse userLoginResponse = new UserLoginResponse();
-        String refreshToken = jwtUtils.generateRefreshToken(loginRequest.getLoginId(), user.getUsername());
-        String accessToken = jwtUtils.generateAccessToken(loginRequest.getLoginId(), user.getUsername());
+        String refreshToken = jwtService.generateRefreshToken(loginRequest.getLoginId(), user.getUsername());
+        String accessToken = jwtService.generateAccessToken(loginRequest.getLoginId(), user.getUsername());
 
         userLoginResponse.setAccessToken(accessToken);
         userLoginResponse.setRefreshToken(refreshToken);

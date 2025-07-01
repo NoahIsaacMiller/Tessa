@@ -3,8 +3,8 @@ package com.noahmiller.tessa.auth.service.impl;
 import com.noahmiller.tessa.auth.enums.VerificationChannel;
 import com.noahmiller.tessa.auth.enums.VerificationType;
 import com.noahmiller.tessa.auth.service.VerificationSender;
-import com.noahmiller.tessa.common.sms.service.SmsService;
-import com.noahmiller.tessa.common.utils.TemplateLoader;
+import com.noahmiller.tessa.core.service.SmsService;
+import com.noahmiller.tessa.core.service.impl.TemplateLoaderServiceImpl;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -26,7 +26,7 @@ public class SmsVerificationSender implements VerificationSender {
     private SmsService smsService;
 
     @Resource
-    private TemplateLoader templateLoader;
+    private TemplateLoaderServiceImpl templateLoaderServiceImpl;
 
     @Override
     public void sendCode(VerificationChannel channel, String target, String code, VerificationType type) {
@@ -81,7 +81,7 @@ public class SmsVerificationSender implements VerificationSender {
     private String loadTemplateContent(VerificationType type) throws IOException {
         // 根据验证类型加载对应的模板（例如：register.txt, login.txt）
         String templateName = DEFAULT_TEMPLATE_DIR + type.name().toLowerCase() + DEFAULT_TEMPLATE_EXT;
-        return templateLoader.getTemplate(templateName);
+        return templateLoaderServiceImpl.getTemplate(templateName);
     }
 
     private Map<String, Object> buildTemplateParams(String phone, String code, VerificationType type) {

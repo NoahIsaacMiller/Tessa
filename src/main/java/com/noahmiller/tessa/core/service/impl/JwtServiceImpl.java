@@ -1,7 +1,7 @@
-package com.noahmiller.tessa.common.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
-import com.noahmiller.tessa.common.service.JwtService;
-import com.noahmiller.tessa.common.config.JwtConfig;
+import com.noahmiller.tessa.core.service.JwtService;
+import com.noahmiller.tessa.core.config.JwtConfig;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;

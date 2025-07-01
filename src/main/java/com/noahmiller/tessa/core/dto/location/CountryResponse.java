@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.dto.location;
+package com.noahmiller.tessa.core.dto.location;
 
 import lombok.Data;
 

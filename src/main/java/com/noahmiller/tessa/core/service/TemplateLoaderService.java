@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.service;
+package com.noahmiller.tessa.core.service;
 
 /**
  * 模板加载服务接口，用于从应用程序资源中加载模板文件。

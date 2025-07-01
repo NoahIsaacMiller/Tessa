@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.api;
+package com.noahmiller.tessa.core.api;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

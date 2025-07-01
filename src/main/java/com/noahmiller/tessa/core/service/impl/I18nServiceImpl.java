@@ -1,6 +1,6 @@
-package com.noahmiller.tessa.common.service.impl; // 放在 impl 子包下
+package com.noahmiller.tessa.core.service.impl; // 放在 impl 子包下
 
-import com.noahmiller.tessa.common.service.I18nService;
+import com.noahmiller.tessa.core.service.I18nService;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;

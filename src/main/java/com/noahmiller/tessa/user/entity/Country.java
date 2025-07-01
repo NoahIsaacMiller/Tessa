@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.model.entity;
+package com.noahmiller.tessa.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,8 +20,4 @@ public class Country {
 
     @Column(nullable = false, unique = true, length = 10)
     private String code; // 国家代码，如 "CN", "US"
-
-    // 你也可以添加其他字段，例如：
-    // @Column(length = 20)
-    // private String phoneCode; // 电话区号
 }

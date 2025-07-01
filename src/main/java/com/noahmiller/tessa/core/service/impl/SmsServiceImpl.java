@@ -1,6 +1,6 @@
-package com.noahmiller.tessa.common.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
-import com.noahmiller.tessa.common.service.SmsService;
+import com.noahmiller.tessa.core.service.SmsService;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;

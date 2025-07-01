@@ -1,9 +1,8 @@
 // src/main/java/com/noahmiller/tessa/common/exception/GlobalExceptionHandler.java
-package com.noahmiller.tessa.common.exception;
+package com.noahmiller.tessa.core.exception;
 
-import com.noahmiller.tessa.common.api.ApiResponse;
+import com.noahmiller.tessa.core.api.ApiResponse;
 import com.noahmiller.tessa.user.exception.InvalidUserArgumentException;
-import com.noahmiller.tessa.user.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,7 +1,7 @@
-package com.noahmiller.tessa.common.service.impl;
+package com.noahmiller.tessa.core.service.impl;
 
-import com.noahmiller.tessa.common.service.EmailContentBuilder;
-import com.noahmiller.tessa.common.service.MailService;
+import com.noahmiller.tessa.core.service.EmailContentBuilder;
+import com.noahmiller.tessa.core.service.MailService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;

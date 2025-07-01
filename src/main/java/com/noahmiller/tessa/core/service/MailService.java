@@ -1,4 +1,4 @@
-package com.noahmiller.tessa.common.service;
+package com.noahmiller.tessa.core.service;
 
 import java.util.concurrent.CompletableFuture;
 
