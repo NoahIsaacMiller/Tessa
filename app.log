@@ -1,22 +1,579 @@
-2025-05-26T01:09:47.096+08:00  INFO 75835 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 75835 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
-2025-05-26T01:09:47.099+08:00  INFO 75835 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-05-26T01:09:47.516+08:00  INFO 75835 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-26T01:09:47.517+08:00  INFO 75835 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-05-26T01:09:47.529+08:00  INFO 75835 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2025-05-26T01:09:47.783+08:00  INFO 75835 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
-2025-05-26T01:09:47.790+08:00  INFO 75835 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-26T01:09:47.790+08:00  INFO 75835 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-26T01:09:47.806+08:00  INFO 75835 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-26T01:09:47.806+08:00  INFO 75835 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 684 ms
-2025-05-26T01:09:47.993+08:00  INFO 75835 --- [Tessa] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.noahmiller.tessa.user.verification.service.impl.VerificationServiceImpl.KeyPrefix
-2025-05-26T01:09:48.157+08:00  WARN 75835 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2025-05-28T02:31:48.919+08:00  INFO 38991 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 38991 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T02:31:48.925+08:00  INFO 38991 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T02:31:49.313+08:00  INFO 38991 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T02:31:49.314+08:00  INFO 38991 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T02:31:49.326+08:00  INFO 38991 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2025-05-28T02:31:49.580+08:00  INFO 38991 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T02:31:49.586+08:00  INFO 38991 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T02:31:49.586+08:00  INFO 38991 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T02:31:49.601+08:00  INFO 38991 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T02:31:49.601+08:00  INFO 38991 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 644 ms
+2025-05-28T02:31:49.783+08:00  INFO 38991 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T02:31:49.954+08:00  WARN 38991 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 6087c9ba-308f-4830-b1bb-dca1c39cb467
+Using generated security password: 1195ee88-68a6-407b-b579-7c05d71d2ada
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-05-26T01:09:48.160+08:00  INFO 75835 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-05-26T01:09:48.355+08:00  INFO 75835 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-05-26T01:09:48.385+08:00 DEBUG 75835 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-05-26T01:09:48.546+08:00  INFO 75835 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
-2025-05-26T01:09:48.555+08:00  INFO 75835 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.701 seconds (process running for 1.869)
+2025-05-28T02:31:49.965+08:00  INFO 38991 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T02:31:50.006+08:00  WARN 38991 --- [Tessa] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Injection of autowired dependencies failed
+2025-05-28T02:31:50.011+08:00  INFO 38991 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-28T02:31:50.021+08:00  INFO 38991 --- [Tessa] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-28T02:31:50.025+08:00 ERROR 38991 --- [Tessa] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1451) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
+	at com.noahmiller.tessa.TessaApplication.main(TessaApplication.java:14) ~[classes/:na]
+Caused by: java.lang.RuntimeException: Could not postProcess org.springframework.security.config.annotation.web.builders.WebSecurity@70bc3a9c of type class org.springframework.security.config.annotation.web.builders.WebSecurity
+	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.postProcess(AutowireBeanFactoryObjectPostProcessor.java:71) ~[spring-security-config-6.4.5.jar:6.4.5]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.setFilterChainProxySecurityConfigurer(WebSecurityConfiguration.java:145) ~[spring-security-config-6.4.5.jar:6.4.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:854) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospectorRequestTransformer': Cannot resolve reference to bean 'mvcHandlerMappingIntrospector' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:206) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1387) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1224) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1597) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1555) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:563) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$1.getIfUnique(DefaultListableBeanFactory.java:489) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.security.config.annotation.web.builders.WebSecurity.setApplicationContext(WebSecurity.java:428) ~[spring-security-config-6.4.5.jar:6.4.5]
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:110) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:85) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:429) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1810) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.initializeBeanIfNeeded(AutowireBeanFactoryObjectPostProcessor.java:98) ~[spring-security-config-6.4.5.jar:6.4.5]
+	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.postProcess(AutowireBeanFactoryObjectPostProcessor.java:67) ~[spring-security-config-6.4.5.jar:6.4.5]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'passwordResetController' method 
+com.noahmiller.tessa.auth.controller.PasswordResetController#resetPassword(ResetPasswordRequest)
+to {POST [/api/v1/auth/reset-password]}: There is already 'passwordResetController' bean method
+com.noahmiller.tessa.auth.controller.PasswordResetController#resetPasswordGetCode(ResetPasswordGetCodeRequest) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 48 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'passwordResetController' method 
+com.noahmiller.tessa.auth.controller.PasswordResetController#resetPassword(ResetPasswordRequest)
+to {POST [/api/v1/auth/reset-password]}: There is already 'passwordResetController' bean method
+com.noahmiller.tessa.auth.controller.PasswordResetController#resetPasswordGetCode(ResetPasswordGetCodeRequest) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:747) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1426) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:372) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.initHandlerMappings(HandlerMappingIntrospector.java:135) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.afterPropertiesSet(HandlerMappingIntrospector.java:123) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 55 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'passwordResetController' method 
+com.noahmiller.tessa.auth.controller.PasswordResetController#resetPassword(ResetPasswordRequest)
+to {POST [/api/v1/auth/reset-password]}: There is already 'passwordResetController' bean method
+com.noahmiller.tessa.auth.controller.PasswordResetController#resetPasswordGetCode(ResetPasswordGetCodeRequest) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:676) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:637) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:507) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:237) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 68 common frames omitted
+
+2025-05-28T02:33:56.489+08:00  INFO 39024 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 39024 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T02:33:56.491+08:00  INFO 39024 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T02:33:56.887+08:00  INFO 39024 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T02:33:56.888+08:00  INFO 39024 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T02:33:56.903+08:00  INFO 39024 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-05-28T02:33:57.161+08:00  INFO 39024 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T02:33:57.167+08:00  INFO 39024 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T02:33:57.167+08:00  INFO 39024 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T02:33:57.181+08:00  INFO 39024 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T02:33:57.181+08:00  INFO 39024 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 668 ms
+2025-05-28T02:33:57.348+08:00  INFO 39024 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T02:33:57.524+08:00  WARN 39024 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 81325b3c-1ea8-4a2b-8cf6-c1a1d8c4a8d2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T02:33:57.534+08:00  INFO 39024 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T02:33:57.692+08:00  INFO 39024 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T02:33:57.731+08:00 DEBUG 39024 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T02:33:57.892+08:00  INFO 39024 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T02:33:57.902+08:00  INFO 39024 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.62 seconds (process running for 1.76)
+2025-05-28T09:49:24.882+08:00  INFO 39024 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T09:49:24.883+08:00  INFO 39024 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T09:49:24.885+08:00  INFO 39024 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-28T09:49:24.902+08:00 DEBUG 39024 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T09:49:24.909+08:00 DEBUG 39024 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T09:49:24.949+08:00  INFO 39024 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T09:49:25.124+08:00  INFO 39024 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32810204
+2025-05-28T09:49:25.125+08:00  INFO 39024 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T09:49:25.177+08:00 DEBUG 39024 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:50:17.278+08:00 DEBUG 39024 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:50:17.281+08:00 DEBUG 39024 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:50:17.302+08:00 DEBUG 39024 --- [Tessa] [http-nio-80-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:55:10.049+08:00  INFO 39024 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T09:55:10.052+08:00  INFO 39024 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T09:55:10.062+08:00  INFO 39024 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T09:55:10.065+08:00  INFO 39024 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T09:55:11.195+08:00  INFO 41368 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41368 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T09:55:11.197+08:00  INFO 41368 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T09:55:11.573+08:00  INFO 41368 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T09:55:11.573+08:00  INFO 41368 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T09:55:11.585+08:00  INFO 41368 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T09:55:11.856+08:00  INFO 41368 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T09:55:11.862+08:00  INFO 41368 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T09:55:11.862+08:00  INFO 41368 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T09:55:11.878+08:00  INFO 41368 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T09:55:11.878+08:00  INFO 41368 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 652 ms
+2025-05-28T09:55:12.056+08:00  INFO 41368 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T09:55:12.240+08:00  WARN 41368 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 033063b7-7adb-47c4-80d1-1d240cf520cd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T09:55:12.250+08:00  INFO 41368 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T09:55:12.410+08:00  INFO 41368 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T09:55:12.433+08:00 DEBUG 41368 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T09:55:12.589+08:00  INFO 41368 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T09:55:12.598+08:00  INFO 41368 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.666 seconds (process running for 1.817)
+2025-05-28T09:55:14.271+08:00  INFO 41368 --- [Tessa] [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T09:55:14.271+08:00  INFO 41368 --- [Tessa] [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T09:55:14.272+08:00  INFO 41368 --- [Tessa] [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T09:55:14.282+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:55:14.289+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:55:14.329+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:55:22.069+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:55:22.071+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:55:22.077+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:55:28.337+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:55:28.339+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:55:28.342+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:58:06.471+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:58:06.472+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:58:06.474+08:00 DEBUG 41368 --- [Tessa] [http-nio-80-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:58:44.045+08:00  INFO 41368 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T09:58:44.049+08:00  INFO 41368 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T09:58:45.698+08:00  INFO 41442 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41442 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T09:58:45.702+08:00  INFO 41442 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T09:58:46.074+08:00  INFO 41442 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T09:58:46.075+08:00  INFO 41442 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T09:58:46.089+08:00  INFO 41442 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T09:58:46.364+08:00  INFO 41442 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T09:58:46.373+08:00  INFO 41442 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T09:58:46.373+08:00  INFO 41442 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T09:58:46.390+08:00  INFO 41442 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T09:58:46.390+08:00  INFO 41442 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 663 ms
+2025-05-28T09:58:46.577+08:00  INFO 41442 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T09:58:46.765+08:00  WARN 41442 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8f3650aa-e68b-415b-a6b9-13fc92623eea
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T09:58:46.775+08:00  INFO 41442 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T09:58:46.939+08:00  INFO 41442 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T09:58:46.963+08:00 DEBUG 41442 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T09:58:47.108+08:00  INFO 41442 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T09:58:47.115+08:00  INFO 41442 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.646 seconds (process running for 1.804)
+2025-05-28T09:58:48.904+08:00  INFO 41442 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T09:58:48.904+08:00  INFO 41442 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T09:58:48.905+08:00  INFO 41442 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T09:58:48.917+08:00 DEBUG 41442 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:58:48.931+08:00 DEBUG 41442 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:58:48.952+08:00  INFO 41442 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T09:58:49.077+08:00  INFO 41442 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b5762b8
+2025-05-28T09:58:49.079+08:00  INFO 41442 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T09:58:49.118+08:00 DEBUG 41442 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T09:59:37.833+08:00  INFO 41442 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T09:59:37.836+08:00  INFO 41442 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T09:59:37.844+08:00  INFO 41442 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T09:59:37.847+08:00  INFO 41442 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T09:59:39.388+08:00  INFO 41468 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41468 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T09:59:39.391+08:00  INFO 41468 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T09:59:39.723+08:00  INFO 41468 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T09:59:39.724+08:00  INFO 41468 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T09:59:39.734+08:00  INFO 41468 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T09:59:39.976+08:00  INFO 41468 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T09:59:39.981+08:00  INFO 41468 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T09:59:39.981+08:00  INFO 41468 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T09:59:39.995+08:00  INFO 41468 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T09:59:39.995+08:00  INFO 41468 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 581 ms
+2025-05-28T09:59:40.170+08:00  INFO 41468 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T09:59:40.340+08:00  WARN 41468 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b60b636a-7aaa-4a94-a95b-d0bde6edf8a4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T09:59:40.350+08:00  INFO 41468 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T09:59:40.507+08:00  INFO 41468 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T09:59:40.528+08:00 DEBUG 41468 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T09:59:40.731+08:00  INFO 41468 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T09:59:40.739+08:00  INFO 41468 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.565 seconds (process running for 1.699)
+2025-05-28T09:59:42.282+08:00  INFO 41468 --- [Tessa] [http-nio-80-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T09:59:42.282+08:00  INFO 41468 --- [Tessa] [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T09:59:42.283+08:00  INFO 41468 --- [Tessa] [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-28T09:59:42.293+08:00 DEBUG 41468 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:59:42.300+08:00 DEBUG 41468 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password/get-code
+2025-05-28T09:59:42.340+08:00  INFO 41468 --- [Tessa] [http-nio-80-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T09:59:42.463+08:00  INFO 41468 --- [Tessa] [http-nio-80-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@673d8b4c
+2025-05-28T09:59:42.464+08:00  INFO 41468 --- [Tessa] [http-nio-80-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T09:59:42.641+08:00 DEBUG 41468 --- [Tessa] [http-nio-80-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:01:12.845+08:00  INFO 41468 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:01:12.847+08:00  INFO 41468 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:01:12.854+08:00  INFO 41468 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T10:01:12.856+08:00  INFO 41468 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T10:01:14.246+08:00  INFO 41503 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41503 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:01:14.249+08:00  INFO 41503 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:01:14.585+08:00  INFO 41503 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:01:14.586+08:00  INFO 41503 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:01:14.597+08:00  INFO 41503 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:01:14.845+08:00  INFO 41503 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:01:14.851+08:00  INFO 41503 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:01:14.851+08:00  INFO 41503 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:01:14.865+08:00  INFO 41503 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:01:14.865+08:00  INFO 41503 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 589 ms
+2025-05-28T10:01:15.036+08:00  INFO 41503 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:01:15.203+08:00  WARN 41503 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f933b637-82c7-4f55-b322-e8225dc650ae
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:01:15.212+08:00  INFO 41503 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:01:15.352+08:00  INFO 41503 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:01:15.374+08:00 DEBUG 41503 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:01:15.539+08:00  INFO 41503 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:01:15.550+08:00  INFO 41503 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.536 seconds (process running for 1.674)
+2025-05-28T10:01:19.703+08:00  INFO 41503 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T10:01:19.703+08:00  INFO 41503 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T10:01:19.704+08:00  INFO 41503 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T10:01:19.713+08:00 DEBUG 41503 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password
+2025-05-28T10:01:19.720+08:00 DEBUG 41503 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password
+2025-05-28T10:01:19.764+08:00 DEBUG 41503 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:01:32.336+08:00  INFO 41503 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:01:32.340+08:00  INFO 41503 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:01:33.807+08:00  INFO 41522 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41522 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:01:33.811+08:00  INFO 41522 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:01:34.131+08:00  INFO 41522 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:01:34.132+08:00  INFO 41522 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:01:34.143+08:00  INFO 41522 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:01:34.377+08:00  INFO 41522 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:01:34.382+08:00  INFO 41522 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:01:34.382+08:00  INFO 41522 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:01:34.396+08:00  INFO 41522 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:01:34.396+08:00  INFO 41522 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 564 ms
+2025-05-28T10:01:34.554+08:00  INFO 41522 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:01:34.721+08:00  WARN 41522 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 22e69579-f065-495e-a83d-d707c4bdb34d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:01:34.729+08:00  INFO 41522 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:01:34.903+08:00  INFO 41522 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:01:34.932+08:00 DEBUG 41522 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:01:35.143+08:00  INFO 41522 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:01:35.154+08:00  INFO 41522 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.624 seconds (process running for 1.776)
+2025-05-28T10:01:35.980+08:00  INFO 41522 --- [Tessa] [http-nio-80-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T10:01:35.980+08:00  INFO 41522 --- [Tessa] [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T10:01:35.981+08:00  INFO 41522 --- [Tessa] [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T10:01:35.990+08:00 DEBUG 41522 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/reset-password
+2025-05-28T10:01:35.997+08:00 DEBUG 41522 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/reset-password
+2025-05-28T10:01:36.047+08:00  INFO 41522 --- [Tessa] [http-nio-80-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T10:01:36.166+08:00  INFO 41522 --- [Tessa] [http-nio-80-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@186d164a
+2025-05-28T10:01:36.167+08:00  INFO 41522 --- [Tessa] [http-nio-80-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T10:01:36.342+08:00 DEBUG 41522 --- [Tessa] [http-nio-80-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:02:22.258+08:00 DEBUG 41522 --- [Tessa] [http-nio-80-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T10:02:22.261+08:00 DEBUG 41522 --- [Tessa] [http-nio-80-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T10:02:22.277+08:00 DEBUG 41522 --- [Tessa] [http-nio-80-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:04:03.438+08:00  INFO 41522 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:04:03.440+08:00  INFO 41522 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:04:03.448+08:00  INFO 41522 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T10:04:03.451+08:00  INFO 41522 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T10:04:04.967+08:00  INFO 41568 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41568 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:04:04.970+08:00  INFO 41568 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:04:05.322+08:00  INFO 41568 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:04:05.323+08:00  INFO 41568 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:04:05.337+08:00  INFO 41568 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:04:05.611+08:00  INFO 41568 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:04:05.616+08:00  INFO 41568 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:04:05.616+08:00  INFO 41568 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:04:05.631+08:00  INFO 41568 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:04:05.632+08:00  INFO 41568 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 637 ms
+2025-05-28T10:04:05.801+08:00  INFO 41568 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:04:05.973+08:00  WARN 41568 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4cc3d082-4d82-4fc2-8c2c-3141c3be27d0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:04:05.981+08:00  INFO 41568 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:04:06.134+08:00  INFO 41568 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:04:06.158+08:00 DEBUG 41568 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:04:06.317+08:00  INFO 41568 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:04:06.327+08:00  INFO 41568 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.585 seconds (process running for 1.74)
+2025-05-28T10:04:07.207+08:00  INFO 41568 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T10:04:07.208+08:00  INFO 41568 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T10:04:07.208+08:00  INFO 41568 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-28T10:04:07.217+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T10:04:07.227+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T10:04:07.281+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:04:14.404+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T10:04:14.407+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T10:04:14.413+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:04:51.560+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T10:04:51.561+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T10:04:51.577+08:00  INFO 41568 --- [Tessa] [http-nio-80-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T10:04:51.714+08:00  INFO 41568 --- [Tessa] [http-nio-80-exec-6] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@80c1dfa
+2025-05-28T10:04:51.715+08:00  INFO 41568 --- [Tessa] [http-nio-80-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T10:04:51.743+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:05:02.634+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T10:05:02.635+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T10:05:02.644+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:05:22.842+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2025-05-28T10:05:22.844+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2025-05-28T10:05:22.859+08:00 DEBUG 41568 --- [Tessa] [http-nio-80-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:16:00.736+08:00  INFO 41568 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:16:00.740+08:00  INFO 41568 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:16:00.749+08:00  INFO 41568 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T10:16:00.752+08:00  INFO 41568 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T10:16:02.407+08:00  INFO 41814 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 41814 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:16:02.409+08:00  INFO 41814 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:16:02.729+08:00  INFO 41814 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:16:02.730+08:00  INFO 41814 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:16:02.741+08:00  INFO 41814 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:16:02.977+08:00  INFO 41814 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:16:02.981+08:00  INFO 41814 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:16:02.981+08:00  INFO 41814 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:16:02.995+08:00  INFO 41814 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:16:02.995+08:00  INFO 41814 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 565 ms
+2025-05-28T10:16:03.169+08:00  INFO 41814 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:16:03.298+08:00  WARN 41814 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1b3a6a0f-267f-4138-ab1a-964fbfc4a332
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:16:03.306+08:00  INFO 41814 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:16:03.431+08:00  INFO 41814 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:16:03.459+08:00 DEBUG 41814 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:16:03.610+08:00  INFO 41814 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:16:03.620+08:00  INFO 41814 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.462 seconds (process running for 1.633)
+2025-05-28T10:28:22.763+08:00  INFO 41814 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:28:22.769+08:00  INFO 41814 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:28:24.341+08:00  INFO 42058 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 42058 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:28:24.344+08:00  INFO 42058 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:28:24.701+08:00  INFO 42058 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:28:24.702+08:00  INFO 42058 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:28:24.716+08:00  INFO 42058 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:28:25.000+08:00  INFO 42058 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:28:25.008+08:00  INFO 42058 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:28:25.009+08:00  INFO 42058 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:28:25.023+08:00  INFO 42058 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:28:25.023+08:00  INFO 42058 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 657 ms
+2025-05-28T10:28:25.184+08:00  INFO 42058 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:28:25.335+08:00  WARN 42058 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 924c1a9c-a51d-40eb-9024-16403d9a45a5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:28:25.343+08:00  INFO 42058 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:28:25.536+08:00  INFO 42058 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:28:25.572+08:00 DEBUG 42058 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:28:25.755+08:00  INFO 42058 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:28:25.764+08:00  INFO 42058 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.629 seconds (process running for 1.768)
+2025-05-28T10:28:39.890+08:00  INFO 42058 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T10:28:39.890+08:00  INFO 42058 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T10:28:39.891+08:00  INFO 42058 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T10:28:39.901+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:28:39.909+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:28:39.972+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:28:56.505+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:28:56.508+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:28:56.512+08:00  WARN 42058 --- [Tessa] [http-nio-80-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-05-28T10:28:56.513+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:28:56.521+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-05-28T10:28:56.522+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:28:56.528+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-4] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-05-28T10:28:59.485+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:28:59.486+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:28:59.488+08:00  WARN 42058 --- [Tessa] [http-nio-80-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-05-28T10:28:59.488+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:28:59.490+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-05-28T10:28:59.491+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:28:59.491+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-5] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-05-28T10:29:07.784+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:29:07.785+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:29:07.791+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:29:16.796+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:29:16.798+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:29:16.820+08:00  INFO 42058 --- [Tessa] [http-nio-80-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T10:29:16.953+08:00  INFO 42058 --- [Tessa] [http-nio-80-exec-8] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ae19a3f
+2025-05-28T10:29:16.954+08:00  INFO 42058 --- [Tessa] [http-nio-80-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T10:29:16.969+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:30:15.002+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:30:15.003+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:30:15.008+08:00 DEBUG 42058 --- [Tessa] [http-nio-80-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:30:43.883+08:00  INFO 42058 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:30:43.887+08:00  INFO 42058 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:30:43.899+08:00  INFO 42058 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T10:30:43.901+08:00  INFO 42058 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T10:30:45.473+08:00  INFO 42097 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 42097 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:30:45.481+08:00  INFO 42097 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:30:45.831+08:00  INFO 42097 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:30:45.831+08:00  INFO 42097 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:30:45.843+08:00  INFO 42097 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:30:46.088+08:00  INFO 42097 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:30:46.094+08:00  INFO 42097 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:30:46.094+08:00  INFO 42097 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:30:46.109+08:00  INFO 42097 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:30:46.109+08:00  INFO 42097 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 600 ms
+2025-05-28T10:30:46.282+08:00  INFO 42097 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:30:46.433+08:00  WARN 42097 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ef62c3c3-0a8a-4f27-96c6-2caa412c7193
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:30:46.441+08:00  INFO 42097 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:30:46.617+08:00  INFO 42097 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:30:46.649+08:00 DEBUG 42097 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:30:46.846+08:00  INFO 42097 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:30:46.854+08:00  INFO 42097 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.612 seconds (process running for 1.769)
+2025-05-28T10:30:47.628+08:00  INFO 42097 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T10:30:47.628+08:00  INFO 42097 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T10:30:47.629+08:00  INFO 42097 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T10:30:47.639+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:30:47.647+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:30:47.697+08:00  INFO 42097 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T10:30:47.815+08:00  INFO 42097 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23ad60c6
+2025-05-28T10:30:47.816+08:00  INFO 42097 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T10:30:47.842+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:30:49.422+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:30:49.424+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:30:49.429+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:30:53.622+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:30:53.624+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:30:53.632+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:30:57.550+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:30:57.551+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:30:57.561+08:00 DEBUG 42097 --- [Tessa] [http-nio-80-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:32:44.370+08:00  INFO 42097 --- [Tessa] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-28T10:32:44.374+08:00  INFO 42097 --- [Tessa] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-28T10:32:44.385+08:00  INFO 42097 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-28T10:32:44.400+08:00  INFO 42097 --- [Tessa] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-28T10:32:45.865+08:00  INFO 42143 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Starting TessaApplication using Java 21.0.7 with PID 42143 (/Users/noahmiller/Code/Tessa/target/classes started by noahmiller in /Users/noahmiller/Code/Tessa)
+2025-05-28T10:32:45.867+08:00  INFO 42143 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T10:32:46.185+08:00  INFO 42143 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-28T10:32:46.185+08:00  INFO 42143 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-28T10:32:46.197+08:00  INFO 42143 --- [Tessa] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-05-28T10:32:46.427+08:00  INFO 42143 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2025-05-28T10:32:46.432+08:00  INFO 42143 --- [Tessa] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T10:32:46.432+08:00  INFO 42143 --- [Tessa] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T10:32:46.444+08:00  INFO 42143 --- [Tessa] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-28T10:32:46.445+08:00  INFO 42143 --- [Tessa] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 560 ms
+2025-05-28T10:32:46.622+08:00  INFO 42143 --- [Tessa] [main] c.n.t.common.utils.impl.JwtUtilsImpl     : JWT工具类初始化完成，颁发者：Tessa
+2025-05-28T10:32:46.788+08:00  WARN 42143 --- [Tessa] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3340e84f-9715-4927-bb3f-d2dc4ff70dca
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-28T10:32:46.797+08:00  INFO 42143 --- [Tessa] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-28T10:32:46.948+08:00  INFO 42143 --- [Tessa] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-28T10:32:46.972+08:00 DEBUG 42143 --- [Tessa] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-28T10:32:47.121+08:00  INFO 42143 --- [Tessa] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2025-05-28T10:32:47.130+08:00  INFO 42143 --- [Tessa] [main] com.noahmiller.tessa.TessaApplication    : Started TessaApplication in 1.468 seconds (process running for 1.611)
+2025-05-28T10:32:48.319+08:00  INFO 42143 --- [Tessa] [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-28T10:32:48.320+08:00  INFO 42143 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-28T10:32:48.321+08:00  INFO 42143 --- [Tessa] [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-28T10:32:48.331+08:00 DEBUG 42143 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:32:48.338+08:00 DEBUG 42143 --- [Tessa] [http-nio-80-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:32:48.387+08:00  INFO 42143 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-28T10:32:48.512+08:00  INFO 42143 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1590278
+2025-05-28T10:32:48.513+08:00  INFO 42143 --- [Tessa] [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-28T10:32:48.540+08:00 DEBUG 42143 --- [Tessa] [http-nio-80-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:32:53.834+08:00 DEBUG 42143 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+2025-05-28T10:32:53.836+08:00 DEBUG 42143 --- [Tessa] [http-nio-80-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+2025-05-28T10:32:54.128+08:00 DEBUG 42143 --- [Tessa] [http-nio-80-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-28T10:38:49.159+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m518ms).
+2025-05-28T10:46:36.192+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m47s33ms).
+2025-05-28T10:53:22.510+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m46s273ms).
+2025-05-28T11:07:15.723+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m23s151ms).
+2025-05-28T11:19:07.013+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s188ms).
+2025-05-28T11:25:36.155+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m59s106ms).
+2025-05-28T11:35:28.739+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m22s530ms).
+2025-05-28T11:50:02.566+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m3s802ms).
+2025-05-28T12:08:51.593+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m19s7ms).
+2025-05-28T12:10:05.811+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m14s217ms).
+2025-05-28T12:14:37.890+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m2s70ms).
+2025-05-28T12:34:44.698+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m36s786ms).
+2025-05-28T12:44:20.381+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m35s684ms).
+2025-05-28T13:35:03.899+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m13s208ms).
+2025-05-28T13:51:38.130+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m4s227ms).
+2025-05-28T14:54:10.404+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m32s274ms).
+2025-05-28T15:27:15.182+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m4s778ms).
+2025-05-28T16:09:30.510+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=42m15s328ms).
+2025-05-28T16:28:52.845+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m22s335ms).
+2025-05-28T16:35:24.497+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m31s651ms).
+2025-05-28T20:22:28.660+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m32s342ms).
+2025-05-28T21:34:06.908+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m8s234ms).
+2025-05-28T21:52:30.914+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m24s6ms).
+2025-05-28T21:56:57.301+08:00  WARN 42143 --- [Tessa] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m26s387ms).

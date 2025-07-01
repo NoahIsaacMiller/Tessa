@@ -1,161 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.noahmiller.tessa.user.mapper.UserMapper">
 
-    <!-- 基础结果映射 -->
+    <!-- ====================== 结果映射 ====================== -->
     <resultMap id="UserResultMap" type="com.noahmiller.tessa.user.entity.User">
-        <id property="id" column="id" />
-        <result property="username" column="username" />
-        <result property="email" column="email" />
-        <result property="phoneNumber" column="phone_number" />
-        <result property="passwordHash" column="password_hash" />
-        <result property="salt" column="salt" />
-        <result property="birthday" column="birthday" />
-        <result property="gender" column="gender" typeHandler="com.noahmiller.tessa.user.handler.GenderHandler"/>
-        <result property="status" column="status" />
-        <result property="emailVerified" column="email_verified" />
-        <result property="phoneVerified" column="phone_verified" />
-        <result property="lastLogin" column="last_login" />
-        <result property="createTime" column="create_time" />
-        <result property="updateTime" column="update_time" />
+        <!-- 主键映射 -->
+        <id property="id" column="id" jdbcType="BIGINT" />
 
-        <!-- 关联 City 对象 -->
+        <!-- 基础字段映射 -->
+        <result property="username" column="username" jdbcType="VARCHAR" />
+        <result property="email" column="email" jdbcType="VARCHAR" />
+        <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR" />
+        <result property="passwordHash" column="password_hash" jdbcType="VARCHAR" />
+        <result property="salt" column="salt" jdbcType="VARCHAR" />
+        <result property="birthday" column="birthday" jdbcType="DATE" />
+
+        <!-- 枚举类型处理器 -->
+        <result property="gender" column="gender" jdbcType="TINYINT"
+                typeHandler="com.noahmiller.tessa.user.handler.GenderHandler" />
+        <result property="status" column="status" jdbcType="TINYINT" />
+        <result property="emailVerified" column="email_verified" jdbcType="BIT" />
+        <result property="phoneVerified" column="phone_verified" jdbcType="BIT" />
+        <result property="lastLogin" column="last_login" jdbcType="TIMESTAMP" />
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
+
+        <!-- 关联城市对象 -->
         <association property="city" javaType="com.noahmiller.tessa.user.entity.City">
-            <id property="id" column="city_id" />
-            <result property="name" column="city_name" />
-            <result property="provinceName" column="province_name" /> <!-- 映射 provinceName -->
+            <id property="id" column="city_id" jdbcType="BIGINT" />
+            <result property="name" column="city_name" jdbcType="VARCHAR" />
+            <result property="provinceName" column="province_name" jdbcType="VARCHAR" />
         </association>
     </resultMap>
 
-    <!-- 插入用户 -->
-    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity.User">
+    <!-- ====================== 插入操作 ====================== -->
+    <insert id="insertUser" parameterType="com.noahmiller.tessa.user.entity.User"
+            useGeneratedKeys="true" keyProperty="id">
         INSERT INTO users (
-        username, email, password_hash, salt,
-        status, email_verified
-        ) VALUES (
-        #{username}, #{email}, #{passwordHash}, #{salt},
-        #{status.value}, #{emailVerified}
+            username, email, password_hash, salt,
+            status, email_verified, phone_number,
+            birthday, gender, city_id,
+            phone_verified, last_login, create_time
         )
-        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-            SELECT LAST_INSERT_ID()
-        </selectKey>
+        VALUES (
+                   #{username, jdbcType=VARCHAR},
+                   #{email, jdbcType=VARCHAR},
+                   #{passwordHash, jdbcType=VARCHAR},
+                   #{salt, jdbcType=VARCHAR},
+                   #{status.value, jdbcType=TINYINT},
+                   #{emailVerified, jdbcType=BIT},
+                   #{phoneNumber, jdbcType=VARCHAR},
+                   #{birthday, jdbcType=DATE},
+                   #{gender, jdbcType=TINYINT},
+                   #{city.id, jdbcType=BIGINT},
+                   #{phoneVerified, jdbcType=BIT},
+                   #{lastLogin, jdbcType=TIMESTAMP},
+                   NOW()
+               )
     </insert>
 
-    <!-- 查询单个用户 -->
+    <!-- ====================== 查询操作 ====================== -->
     <select id="selectUserById" parameterType="java.lang.Long" resultMap="UserResultMap">
         SELECT
             u.*,
-            c.id as city_id,
-            c.name as city_name,
-            p.name as province_name
+            c.id AS city_id,
+            c.name AS city_name,
+            p.name AS province_name
         FROM users u
                  LEFT JOIN cities c ON u.city_id = c.id
                  LEFT JOIN provinces p ON c.province_id = p.id
-        WHERE u.id = #{id}
+        WHERE u.id = #{id, jdbcType=BIGINT}
     </select>
 
     <select id="selectUserByUsername" parameterType="java.lang.String" resultMap="UserResultMap">
         SELECT
             u.*,
-            c.id as city_id,
-            c.name as city_name,
-            p.name as province_name
+            c.id AS city_id,
+            c.name AS city_name,
+            p.name AS province_name
         FROM users u
                  LEFT JOIN cities c ON u.city_id = c.id
                  LEFT JOIN provinces p ON c.province_id = p.id
-        WHERE u.username = #{username}
+        WHERE u.username = #{username, jdbcType=VARCHAR}
     </select>
 
     <select id="selectUserByEmail" parameterType="java.lang.String" resultMap="UserResultMap">
         SELECT
             u.*,
-            c.id as city_id,
-            c.name as city_name,
-            p.name as province_name
+            c.id AS city_id,
+            c.name AS city_name,
+            p.name AS province_name
         FROM users u
                  LEFT JOIN cities c ON u.city_id = c.id
                  LEFT JOIN provinces p ON c.province_id = p.id
-        WHERE u.email = #{email}
+        WHERE u.email = #{email, jdbcType=VARCHAR}
     </select>
 
     <select id="selectUserByPhoneNumber" parameterType="java.lang.String" resultMap="UserResultMap">
         SELECT
             u.*,
-            c.id as city_id,
-            c.name as city_name,
-            p.name as province_name
+            c.id AS city_id,
+            c.name AS city_name,
+            p.name AS province_name
         FROM users u
                  LEFT JOIN cities c ON u.city_id = c.id
                  LEFT JOIN provinces p ON c.province_id = p.id
-        WHERE u.phone_number = #{phoneNumber}
+        WHERE u.phone_number = #{phoneNumber, jdbcType=VARCHAR}
     </select>
 
-    <!-- 查询所有用户 -->
     <select id="selectAllUsers" resultMap="UserResultMap">
         SELECT
             u.*,
-            c.id as city_id,
-            c.name as city_name,
-            p.name as province_name
+            c.id AS city_id,
+            c.name AS city_name,
+            p.name AS province_name
         FROM users u
                  LEFT JOIN cities c ON u.city_id = c.id
                  LEFT JOIN provinces p ON c.province_id = p.id
     </select>
 
-    <!-- 更新用户 -->
+    <!-- ====================== 更新操作 ====================== -->
     <update id="updateUser" parameterType="com.noahmiller.tessa.user.entity.User">
         UPDATE users
         <set>
-            <if test="username != null">username = #{username},</if>
-            <if test="email != null">email = #{email},</if>
-            <if test="phoneNumber != null">phone_number = #{phoneNumber},</if>
-            <if test="passwordHash != null">password_hash = #{passwordHash},</if>
-            <if test="salt != null">salt = #{salt},</if>
-            <if test="birthday != null">birthday = #{birthday},</if>
-            <if test="gender != null">gender = #{gender},</if>
-            <if test="city != null">city_id = #{city.id},</if>
-            <if test="status != null">status = #{status.value},</if>
-            <if test="emailVerified != null">email_verified = #{emailVerified},</if>
-            <if test="phoneVerified != null">phone_verified = #{phoneVerified},</if>
-            <if test="lastLogin != null">last_login = #{lastLogin},</if>
+            <if test="username != null">username = #{username, jdbcType=VARCHAR},</if>
+            <if test="email != null">email = #{email, jdbcType=VARCHAR},</if>
+            <if test="phoneNumber != null">phone_number = #{phoneNumber, jdbcType=VARCHAR},</if>
+            <if test="passwordHash != null">password_hash = #{passwordHash, jdbcType=VARCHAR},</if>
+            <if test="salt != null">salt = #{salt, jdbcType=VARCHAR},</if>
+            <if test="birthday != null">birthday = #{birthday, jdbcType=DATE},</if>
+            <if test="gender != null">gender = #{gender, jdbcType=TINYINT},</if>
+            <if test="city != null and city.id != null">city_id = #{city.id, jdbcType=BIGINT},</if>
+            <if test="status != null">status = #{status.value, jdbcType=TINYINT},</if>
+            <if test="emailVerified != null">email_verified = #{emailVerified, jdbcType=BIT},</if>
+            <if test="phoneVerified != null">phone_verified = #{phoneVerified, jdbcType=BIT},</if>
+            <if test="lastLogin != null">last_login = #{lastLogin, jdbcType=TIMESTAMP},</if>
             update_time = NOW()
         </set>
-        WHERE id = #{id}
+        WHERE id = #{id, jdbcType=BIGINT}
     </update>
 
-    <!-- 删除用户 -->
+    <!-- ====================== 删除操作 ====================== -->
     <delete id="deleteUserById" parameterType="java.lang.Long">
-        DELETE FROM users WHERE id = #{id}
+        DELETE FROM users
+        WHERE id = #{id, jdbcType=BIGINT}
     </delete>
 
-    <!-- 存在性检查 -->
+    <!-- ====================== 存在性检查（COUNT(1) 版本）====================== -->
     <select id="existsById" parameterType="java.lang.Long" resultType="java.lang.Boolean">
-        SELECT EXISTS(SELECT 1 FROM users WHERE id = #{id})
+        SELECT COUNT(1) FROM users
+        WHERE id = #{id, jdbcType=BIGINT}
     </select>
 
     <select id="existsByEmail" parameterType="java.lang.String" resultType="java.lang.Boolean">
-        SELECT EXISTS(SELECT 1 FROM users WHERE email = #{email})
+        SELECT COUNT(1) FROM users
+        WHERE email = #{email, jdbcType=VARCHAR}
     </select>
 
     <select id="existsByUsername" parameterType="java.lang.String" resultType="java.lang.Boolean">
-        SELECT EXISTS(SELECT 1 FROM users WHERE username = #{username})
+        SELECT COUNT(1) FROM users
+        WHERE username = #{username, jdbcType=VARCHAR}
     </select>
 
     <select id="existsByPhoneNumber" parameterType="java.lang.String" resultType="java.lang.Boolean">
-        SELECT EXISTS(SELECT 1 FROM users WHERE phone_number = #{phoneNumber})
+        SELECT COUNT(1) FROM users
+        WHERE phone_number = #{phoneNumber, jdbcType=VARCHAR}
     </select>
 
-    <!-- 按状态查询用户 -->
+    <!-- ====================== 条件查询 ====================== -->
     <select id="selectUsersByStatus" parameterType="com.noahmiller.tessa.user.entity.UserStatus" resultMap="UserResultMap">
         SELECT
             u.*,
-            c.id as city_id,
-            c.name as city_name,
-            p.name as province_name
+            c.id AS city_id,
+            c.name AS city_name,
+            p.name AS province_name
         FROM users u
                  LEFT JOIN cities c ON u.city_id = c.id
                  LEFT JOIN provinces p ON c.province_id = p.id
-        WHERE u.status = #{value}
+        WHERE u.status = #{value, jdbcType=TINYINT}
+    </select>
+
+    <select id="isEmailVerified" resultType="java.lang.Boolean">
+        SELECT users.email_verified FROM users WHERE email = #{email};
+    </select>
+
+    <select id="isPhoneVerifyied">
+        SELECT users.phone_verified FROM users WHERE phone_number = #{phoneNumber};
     </select>
 </mapper>

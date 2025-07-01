@@ -69,6 +69,11 @@ logging:
 
 # 我的自定义配置
 my-configuration:
+  security:
+    password:
+      min-length: 8
+      max-length: 32
+      pattern: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$
   redis:
     key-prefix: "Tessa"
   jwt:

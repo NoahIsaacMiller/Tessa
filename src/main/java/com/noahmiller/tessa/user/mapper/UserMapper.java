@@ -46,4 +46,8 @@ public interface UserMapper {
 
     // 按状态查询用户
     List<User> selectUsersByStatus(UserStatus status);
+
+    boolean isEmailVerified(String email);
+
+    boolean isPhoneVerified(String phoneNumber);
 }

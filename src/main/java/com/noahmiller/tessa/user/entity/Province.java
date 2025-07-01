@@ -1,4 +1,4 @@
 package com.noahmiller.tessa.user.entity;
 
-public class City {
+public class Province {
 }

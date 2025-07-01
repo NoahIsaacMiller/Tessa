@@ -9,7 +9,7 @@ public enum UserResponseMessage {
     MAIL_ALREADY_VERIFIED("该邮箱已经验证, 请勿重复验证"),
     REGISTER_SUCCEED("注册成功"),
     PASSWORD_NOT_MATCH("密码错误或账号不匹配"),
-    LOGIN_SUCCEED("用户登录成功")
+    LOGIN_SUCCEED("登录成功")
     ;
 
     private final String description;

@@ -1,8 +1,7 @@
 package com.noahmiller.tessa.user.controller;
 
 import com.noahmiller.tessa.common.api.ApiResponse;
-import com.noahmiller.tessa.user.dto.UserCreateRequest;
-import com.noahmiller.tessa.user.dto.UserResponse;
+import com.noahmiller.tessa.auth.dto.UserResponse;
 import com.noahmiller.tessa.user.entity.User;
 import com.noahmiller.tessa.user.mapper.UserMapper;
 import com.noahmiller.tessa.user.service.UserService;
